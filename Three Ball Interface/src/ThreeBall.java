@@ -33,17 +33,16 @@ public class ThreeBall{
 		}
 		while (s.hasNextLine()) {
 			String line = s.nextLine();
-			if (line.startsWith("#")) //if it finds a line that begins with a # it will skip that line, its like a comment
+			if (line.startsWith("#")) // If it finds a line that begins with a # it will skip that line, its like a comment
 				continue;
 			
-			StringTokenizer normalTok = new StringTokenizer(line, "\t"); //every tab it will take in the next variable
+			StringTokenizer normalTok = new StringTokenizer(line, "\t"); // Every tab it will take in the next variable
 			playersScores = new String[normalTok.countTokens()][2];
-			playersScores[0][0] = normalTok.nextToken();
 			
-			int count = 1; //creates the int count
-			while (normalTok.hasMoreTokens()) { //separates the rest of the pairs
-				playersScores[count][0] = normalTok.nextToken(); //parses first one and puts it into the huge array
-				count++; //its the i for this while loop
+			int count = 0; // Creates the int count
+			while (normalTok.hasMoreTokens()) { // Separates the rest of the pairs
+				playersScores[count][0] = normalTok.nextToken(); // Parses first one and puts it into the huge array
+				count++; // Its the i for this while loop
 			}
 		}
 		s.close();
