@@ -80,14 +80,14 @@ public class ThreeBall{
 	
 	public boolean createNewScoreFile(File file){
 		System.out.println("[INFO] Trying to create " + file.getName() + "!");
-		Writer writer;		// This writes data to the file
+		Writer writer;	// This writes data to the file
 		try {
 			file.createNewFile();
 			FileOutputStream is = new FileOutputStream(file);
 			OutputStreamWriter osw = new OutputStreamWriter(is);
 			writer = new BufferedWriter(osw);
 			
-			writer.write("#Name\tBest\tScore\tWins\tLoses");
+			writer.write("#Name\tBest\tScore\tWins\tLoses"); // Comment denoting how files should look
 			writer.close();
 			
 			System.out.println("[INFO] Created " + file.getName() + "!");
